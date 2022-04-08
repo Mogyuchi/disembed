@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    container_name: disembed
+    build: .
+    tty: true
+    volumes:
+      - type: bind
+        source: .
+        target: /home/node/app
+      - type: volume
+        source: node_modules
+        target: /home/node/app/node_modules
+volumes:
+  node_modules: {}
